@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Track Plan</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/css/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/css/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/css/favicon-16x16.png">
+    <link rel="manifest" href="/static/css/site.webmanifest">
+    <link rel="stylesheet" href="/static/css/Login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var flashes = document.querySelector('.flashes');
+      if (flashes) {
+        flashes.classList.add('show');
+        setTimeout(function() {
+          flashes.classList.remove('show');
+        }, 5000); 
+      }
+    });
+  </script>
+  
+<body>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+   
+    <div class="wrapper">  
+        <form action="" method="POST">
+            <h1>Login</h1>
+            <div class="input-box">
+            <input type="text" name="email" placeholder="Email" required>
+            <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+            <input type="text" name="password" placeholder="Password" required>
+            <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="remember-pass">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            
+            <button type="submit"class = "btn">Login</button>
+            <div class="register-link">
+                <p>Don't have an account
+                    <a href="/signup"> Sign Up</a>
+                </p>
+            </div>
+
+
+
+        </form>
+
+    </div>
+    
+</body>
+</html>

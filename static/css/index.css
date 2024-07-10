@@ -1,0 +1,54 @@
+.container-md h1{
+    color: rgb(4, 4, 201);
+    font-size: 60px;
+    font: weight 300px;
+}
+.container h2{
+    font-size: 30px;
+    font-weight: 300px;
+}
+.container-md .btn{
+    background-color: rgba(10, 10, 173, 0.934);
+    cursor: pointer;
+    size: 30px;
+    text-align: center;
+    align-items: center;
+    place-items: center;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+    width: 90px;
+    justify-content: center;
+}
+.container-fluid .navbar-brand img{
+    width: 30px;
+    height: 30px;
+    margin-left: 50px;
+}
+.container-fluid .navbar-brand span{
+     margin-left: 15px;
+     font-size: 25px;
+     font-weight: bolder;
+}
+.form {
+    width: 250px;
+    margin: 10px;
+    }
+    ul.flashes {
+        list-style-type: none;
+        padding: 1em;
+        margin: 0;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        z-index: 1000; /* Ensure it's above other content */
+        display: none; /* Initially hidden */
+      }
+      
+      ul.flashes li {
+        margin-bottom: 0.5em;
+      }

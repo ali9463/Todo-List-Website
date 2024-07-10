@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SignUp Track Plan</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/css/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/css/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/css/favicon-16x16.png">
+    <link rel="manifest" href="/static/css/site.webmanifest">
+    <link rel="stylesheet" href="/static/css/SignUp.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class=flashes>
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+   
+    <div class="wrapper">  
+        <form action="" method="POST">
+            <h1>Sign Up</h1>
+            <div class="input-box">
+            <input type="text" name="email" placeholder="Email" required>
+            <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+            <input type="text" name="password" placeholder="Password" required>
+            <i class='bx bxs-lock-alt'></i>
+            </div>
+            <div class="remember-pass">
+                <label><input type="checkbox">Remember me</label>
+            </div>
+            
+            <button type="submit"class = "btn">Sign Up</button>
+            <div class="register-link">
+                <p>Have an account
+                    <a href="/">Login</a>
+                </p>
+            </div>
+
+
+
+        </form>
+
+    </div>
+    
+</body>
+</html>

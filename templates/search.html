@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1 class="text-center my-3">Search Results</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Serial #</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for note in results  %}
+        <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{note.title}}</td>
+            <td>{{note.desc}}</td>
+            <td>
+                <a href="/delete/{{note.serial_number}}" class="btn btn-outline-danger btn-sm">Delete</a>
+                <a href="/change/{{note.serial_number}}" class="btn btn-outline-success btn-sm ml-2">Change</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock body %}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+
+  <div class="container-md mb-4 ">
+    <h1 class="text-center">Add Your Tasks</h1>
+    <h4 class="text-center">Increase your Efficency for Work!</h4>
+    <form action = "/index" method = "POST">
+      <div class="mb-3">
+        <label for="title" class="form-label"></label>
+        <input type="text" placeholder="Title"class="form-control" name="title" id="title" aria-describedby="emailHelp">
+        
+      </div>
+      <div class="mb-3">
+        <label for="desc" class="form-label"></label>
+        <textarea class="form-control" placeholder="Details" id="desc" name="desc" rows="3"></textarea>
+      </div>
+      <div class="d-flex justify-content-center">
+      <button type="submit" class="btn ">ADD</button>
+    </div>
+    </form>
+  </div>
+  
+  <div class="container my-4">
+    <h2 >Your Tasks</h2>
+    
+    {% if allRead|length==0 %}
+    <div class="alert alert-dark" role="alert">
+        No Tasks Yet. Enter your Tasks!
+    </div>
+    {% else %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Numbers</th>
+                <th scope="col">Title</th>
+                <th scope="col">Details</th>
+                <th scope="col">Date</th>
+                <th scope="col">Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for read in allRead  %}
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{read.title}}</td>
+                <td>{{read.desc}}</td>
+                <td>{{read.date_created.split()[0]}}</td>
+                <td>
+                    <a href="/delete/{{read.serial_number}}" class="btn btn-danger btn-sm">Delete</a>
+                    <a href="/change/{{read.serial_number}}" class="btn btn-success btn-sm">Update</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+    {% endblock body %}
