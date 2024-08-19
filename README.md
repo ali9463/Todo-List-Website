@@ -26,6 +26,14 @@ Before running the application, configure the database settings. You have two op
    # app.py
    app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///database.sqlite'
    ```
+#### Install these Requirements
+1. Download Microsoft Sql Server Management Studio.
+2. Download OBDC Driver for the microsoft sql server management.
+3. Install libraries in Python
+4. pip install flask
+5. pip install flask_sqlalchemy
+6. pip install sqlalchemy
+7. pip install pyodbc
 
 ### Running the Application
 Start the Flask application using Python.
